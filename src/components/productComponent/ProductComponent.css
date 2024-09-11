@@ -1,0 +1,34 @@
+.product-container {
+  border: 2px solid rgb(88, 194, 62);
+  display: flex;
+  max-width: 1200px;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.product-images {
+  display: flex;
+  padding: 20px;
+}
+.product-info {
+  padding: 35px 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* ======================Media queries=================== */
+@media (max-width: 1200px) {
+  .product-container {
+    flex-direction: column;
+    border: 3px solid salmon;
+  }
+  .product-images {
+    flex-direction: column;
+    gap: 10px;
+    order: 2;
+  }
+  .product-info {
+    order: 1;
+  }
+}
