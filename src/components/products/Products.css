@@ -1,0 +1,22 @@
+.product-images {
+  display: flex;
+  padding: 20px;
+}
+.product-info {
+  padding: 35px 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* ======================Media queries=================== */
+@media (max-width: 1200px) {
+  .product-images {
+    flex-direction: column;
+    gap: 10px;
+    order: 2;
+  }
+  .product-info {
+    order: 1;
+  }
+}

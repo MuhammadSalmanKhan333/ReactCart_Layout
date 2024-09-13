@@ -1,17 +1,19 @@
 import React, { useState } from "react";
 import "./ProductImages.css";
-import { imagePaths } from "../data/data";
 
-const ProductImages = () => {
-  const [selectedImg, setSelectedImg] = useState(imagePaths[0]);
+const ProductImages = (props) => {
+  const [selectedImg, setSelectedImg] = useState(
+    props.getdata?.imagePaths?.[0]
+  );
 
   function handleChange(path) {
     setSelectedImg(path);
   }
+
   return (
     <div className="product-images">
       <div className="thumbnails">
-        {imagePaths.map((path, index) => (
+        {props.getdata?.imagePaths?.map((path, index) => (
           <img
             key={index}
             src={path}

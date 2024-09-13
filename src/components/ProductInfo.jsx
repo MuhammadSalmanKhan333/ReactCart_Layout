@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import { dataObj } from "../data/data";
 import "./ProductInfo.css";
 import { sizes } from "../data/data";
 
-const ProductInfo = () => {
+const ProductInfo = (props) => {
   const sized = {
     S: 122.0,
     M: 135.0,
@@ -15,23 +14,22 @@ const ProductInfo = () => {
   function handleClick(size) {
     setSelectedSize(size);
   }
-  let discount = dataObj.discount;
+  let discount = props.getdata.discount;
   let originalPrice = sized[selectedSize];
   let discountPrice = originalPrice * (discount / 100);
   let finalPrice = originalPrice - discountPrice;
-  console.log(finalPrice);
 
   return (
     <>
       <div>
-        <p className="brand">{dataObj.brand}</p>
-        <h1 className="product-title">{dataObj.title}</h1>
-        <p className="product-description">{dataObj.description}</p>
+        <p className="brand">{props.getdata.brand}</p>
+        <h1 className="product-title">{props.getdata.title}</h1>
+        <p className="product-description">{props.getdata.description}</p>
         <div className="product-price">
           <p className="discount-price" id="discount-price">
             <span id="discounted-price">${finalPrice.toFixed(2)}</span>
             <span className="discount" id="discount">
-              {dataObj.discount}%
+              {props.getdata.discount}%
             </span>
           </p>
           <p className="original-price">
