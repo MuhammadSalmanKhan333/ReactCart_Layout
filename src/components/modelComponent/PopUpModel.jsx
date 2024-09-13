@@ -54,7 +54,7 @@ function PopUpModel({ show, setShow, saveData }) {
       title: "",
       discount: "",
       description: "",
-      imagePaths: [],
+      imagePaths: "",
     };
 
     if (brand.trim() === "") {
@@ -69,7 +69,6 @@ function PopUpModel({ show, setShow, saveData }) {
     if (description.trim() === "") {
       errors.description = "Brand description is required";
     }
-    console.log(imagePaths);
     if (imagePaths.length <= 0) {
       errors.imagePaths = "Images is not added";
     } else {

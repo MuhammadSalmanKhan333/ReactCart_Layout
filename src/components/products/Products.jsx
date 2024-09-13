@@ -1,6 +1,6 @@
 import React from "react";
-import ProductImages from "../ProductImages";
-import ProductInfo from "../ProductInfo";
+import ProductImages from "./ProductImages";
+import ProductInfo from "./ProductInfo";
 import "./Products.css";
 
 const Products = ({ data }) => {

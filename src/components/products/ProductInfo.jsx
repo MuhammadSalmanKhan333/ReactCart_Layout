@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./ProductInfo.css";
-import { sizes } from "../data/data";
+import { sizes } from "../../data/data";
 
 const ProductInfo = (props) => {
   const sized = {
