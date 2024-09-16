@@ -36,6 +36,7 @@ function PopUpModel({ show, setShow, saveData, data }) {
     var files = Array.from(e.target.files);
     const imagepath = files.map((file) => {
       const fileUrl = URL.createObjectURL(file);
+      console.log(files);
       return fileUrl;
     });
     setFormData((prev) => ({
@@ -49,9 +50,9 @@ function PopUpModel({ show, setShow, saveData, data }) {
       saveData(formData, data.index);
     } else {
       saveData(formData);
+      window.scrollTo(top, { behavior: "smooth" });
     }
     handleClose();
-    window.scrollTo(top, { behavior: "smooth" });
   };
   const validateForm = () => {
     const { brand, title, discount, description, imagePaths } = formData;

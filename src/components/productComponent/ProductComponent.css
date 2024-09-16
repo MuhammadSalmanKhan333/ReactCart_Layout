@@ -48,6 +48,28 @@
   background: rgb(0, 255, 255, 0.8);
   color: black;
 }
+.deletbtn {
+  position: absolute;
+  top: 20px;
+  right: 10rem;
+  border: none;
+  outline: 1px solid aqua;
+  border-radius: 20px;
+  padding: 10px;
+  box-shadow: 0 0 8px rgb(0, 255, 255, 0.5);
+  cursor: pointer;
+  font-size: medium;
+  font-weight: 500;
+}
+.deletbtn:hover {
+  transition: 0.8s;
+  background: rgb(0, 255, 255, 0.8);
+  color: black;
+}
+.deletbtn .deleteIcon {
+  font-size: 20px;
+  color: purple;
+}
 .product-images {
   display: flex;
   padding: 20px;

@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./ProductImages.css";
 
 const ProductImages = (props) => {
-  const [selectedImg, setSelectedImg] = useState(
-    props.getdata?.imagePaths?.[0]
-  );
+  const [selectedImg, setSelectedImg] = useState(null);
+
+  useEffect(() => {
+    setSelectedImg(props.getdata?.imagePaths?.[0]);
+  }, [props.getdata.imagePaths]);
 
   function handleChange(path) {
     setSelectedImg(path);
