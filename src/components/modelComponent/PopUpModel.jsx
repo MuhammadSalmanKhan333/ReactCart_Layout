@@ -4,14 +4,14 @@ import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
 import Image from "react-bootstrap/Image";
 
-function PopUpModel({ show, setShow, saveData }) {
+function PopUpModel({ show, setShow, saveData, data }) {
   const [disable, setDisable] = useState(true);
   const [formData, setFormData] = useState({
-    brand: "",
-    title: "",
-    discount: 0,
-    description: "",
-    imagePaths: [],
+    brand: data.brand || "",
+    title: data.title || "",
+    discount: data.discount || 0,
+    description: data.description || "",
+    imagePaths: data.imagePaths || [],
   });
   const [error, setError] = useState({
     brand: true,
@@ -20,7 +20,9 @@ function PopUpModel({ show, setShow, saveData }) {
     description: true,
   });
 
-  const handleClose = () => setShow(false);
+  const handleClose = () => {
+    setShow(false);
+  };
   const handleChange = (e) => {
     const { id, value } = e.target;
     setFormData((prevData) => ({ ...prevData, [id]: value }));
@@ -43,7 +45,11 @@ function PopUpModel({ show, setShow, saveData }) {
   };
 
   const handleSave = () => {
-    saveData(formData);
+    if (data?.index || data.index === 0) {
+      saveData(formData, data.index);
+    } else {
+      saveData(formData);
+    }
     handleClose();
     window.scrollTo(top, { behavior: "smooth" });
   };
@@ -109,11 +115,13 @@ function PopUpModel({ show, setShow, saveData }) {
               <Form.Control
                 type="text"
                 required
+                placeholder="Enter brand description"
                 value={formData.title}
-                placeholder="Enter brand title"
                 onChange={handleChange}
               />
-              {error.title && <p className="text-danger">{error.title}</p>}
+              {error.title && (
+                <p className="text-danger">The field value is empty </p>
+              )}
             </Form.Group>
             <Form.Group controlId="discount">
               <Form.Label>Discount (%)</Form.Label>

@@ -1,11 +1,3 @@
-/* .button-container {
-  width: 100px;
-  height: auto;
-  border: 2px solid green;
-  position: absolute;
-  bottom: 30px;
-  right: 30px;
-} */
 .addbtn {
   position: fixed;
   bottom: 30px;
@@ -18,6 +10,7 @@
   cursor: pointer;
   font-size: medium;
   font-weight: 500;
+  z-index: 99;
 }
 .addbtn:hover {
   transition: 0.8s;
@@ -35,8 +28,26 @@
   max-width: 1200px;
   background-color: white;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  position: relative;
 }
-
+.editbtn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  border: none;
+  outline: 1px solid aqua;
+  border-radius: 20px;
+  padding: 10px;
+  box-shadow: 0 0 8px rgb(0, 255, 255, 0.5);
+  cursor: pointer;
+  font-size: medium;
+  font-weight: 500;
+}
+.editbtn:hover {
+  transition: 0.8s;
+  background: rgb(0, 255, 255, 0.8);
+  color: black;
+}
 .product-images {
   display: flex;
   padding: 20px;
