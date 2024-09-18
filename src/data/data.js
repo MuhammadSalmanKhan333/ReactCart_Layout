@@ -26,19 +26,6 @@ export const dataObj = [
     ],
   },
   {
-    brand: "Polo Grand",
-    title: "Custom Fit Polo Grand Oxford Shirt 3",
-    description:
-      "Grey polo with a classic cut. Made of smooth and soft cotton.",
-    discount: 15,
-    originalPrice: 135.0,
-    imagePaths: [
-      "/images/T-Shirt1.png",
-      "/images/T-Shirt2.png",
-      "/images/T-Shirt3.png",
-    ],
-  },
-  {
     brand: "Polo Grand updated",
     title: "Custom Fit Polo Grand Oxford Shirt 4",
     description:
